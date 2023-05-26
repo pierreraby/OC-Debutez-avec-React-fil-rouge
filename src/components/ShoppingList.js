@@ -27,11 +27,21 @@ let categories = plantList.reduce((acc, plant) => acc.includes(plant.category) ?
 
 
 function ShoppingList() {
-	return <ul>
-		{categories.map((cat, index) => (
-			<li key={`${cat}-${index}`}>{cat}</li>
+	return (
+		<>
+			<ul>
+				{categories.map((cat, index) => (
+					<li key={`${cat}-${index}`}>{cat}</li>
+				))}
+			</ul>
+			<ul>
+		{plantList.map((plant, index) => (
+			<li key={plant.id}>{plant.name}</li>
 		))}
 	</ul>
+		</>
+
+	)
 }
 
 export default ShoppingList
